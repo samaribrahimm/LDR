@@ -12,5 +12,5 @@
 
 // Initialize the LDR_Config array with the correct structure
 LDR_t LDR_Config[LDRNUM] = {
-    { 0 } , // Assuming the LDR is connected to ADC channel 0
+    { ADC_CHANNEL_0 } , // Assuming the LDR is connected to ADC channel 0
 };

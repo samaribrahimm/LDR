@@ -18,15 +18,15 @@ int main(void) {
 
     // Main loop
     while (1) {
-        u8 ldrValue =0,x;;
-        LDR_GetValue(&ldrValue);// Get the value of the LDR at index 0
-
+        u16 ldrValue =0;
+        LDR_GetValue(0,&ldrValue);// Get the value of the LDR at index 0
+        ldrValue =(u16)(((f32)ldrValue/975)*100);
            // Display LDR value as an integer
-LCD_vidClearScreen();
-LCD_enuWriteString("LDR_Value = ",0,0);
-LCD_enuDisplayNum((s32)ldrValue);
+        LCD_vidClearScreen();
+        LCD_enuWriteString("LDR_Value = ",0,0);
+        LCD_enuDisplayNum((s32)ldrValue);
 
-_delay_ms(1000);
+        _delay_ms(1000);
 
 
     }
